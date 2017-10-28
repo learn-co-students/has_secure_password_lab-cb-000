@@ -1,0 +1,7 @@
+<% if !@users.empty? %>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= u.username %></li>
+    <% end %>
+  </ul>
+<% end %>
