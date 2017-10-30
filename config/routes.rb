@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  get 'sessions/new' => 'sessions#new'
+  post '/sessions' => 'sessions#create'
+
+  get "/welcome" => 'welcome#welcome'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,7 +25,7 @@ Rails.application.routes.draw do
   # Example resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
+  #       get 'short' 
   #       post 'toggle'
   #     end
   #
