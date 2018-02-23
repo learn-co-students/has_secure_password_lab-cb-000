@@ -6,18 +6,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if params[:user][:password] == params[:user][:password_confirmation]
+    # if params[:user][:password] == params[:user][:password_confirmation]
       if @user.save
         session[:user_id] = @user.id
         redirect_to '/homepage'
       else
         flash[:notice] = "User input invalid"
-        render 'signup'
+        redirect_to '/signup'
       end
-    else
-      flash[:notice] = "Passwords don't match"
-      redirect_to '/signup'
-    end
+    # else
+    #   flash[:notice] = "Passwords don't match"
+    #   redirect_to '/signup'
+    # end
   end
 
   private
