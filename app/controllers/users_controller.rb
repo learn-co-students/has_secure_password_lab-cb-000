@@ -4,12 +4,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params(:name, :password, :password_confirmation))
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to controller: 'sessions', action: "new"
-    else
-      redirect_to controller: 'users', action: 'new'
-    end
+    return redirect_to controller: 'users', action: 'new' unless @user.save
+    session[:user_id] = @user.id
+    redirect_to controller: 'sessions', action: "new"
   end
 
 end
