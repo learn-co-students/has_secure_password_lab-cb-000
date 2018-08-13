@@ -1,27 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
-  get 'users/create'
+  resources :users, only: [:new, :create]
 
-  get 'sessions/new'
+  resources :sessions, only: [:new, :create, :destroy]
 
-  get 'sessions/create'
+  get 'welcome/home', to: 'welcome#home'
 
-  get 'sessions/destroy'
-
-  get 'welcome/home'
-
-  get 'welcome/index'
-
-  get 'welcome/new'
-
-  get 'welcome/create'
-
-  get 'welcome/index'
-
-  get 'welcome/new'
-
-  get 'welcome/create'
+  root "users#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

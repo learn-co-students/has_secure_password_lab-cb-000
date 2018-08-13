@@ -1,2 +1,4 @@
 <%= content_tag :h1, "Welcome" %>
-<%= content_tag :p, "Hi, #{current_user.username}" %>
+<%= content_tag :p, "Hi, #{current_user.name}" %>
+
+<%= button_to "Log Out", session_path(current_user), method: 'delete' %>
