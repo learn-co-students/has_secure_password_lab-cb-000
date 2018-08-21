@@ -1,0 +1,18 @@
+<h1>Welcome!</h1>
+
+<h3>Sign up:</h3>
+
+<%= form_for :user, url: '/users' do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br></br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br></br>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br></br>
+
+  <%= f.submit 'Sign Up' %>
+<% end %>
+
+<h4>or <%= link_to "Log In", login_url %></h4>
