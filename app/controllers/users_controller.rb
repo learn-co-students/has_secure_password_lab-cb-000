@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def index
+  end
+
   def new
     @user = User.new
   end
@@ -9,9 +12,9 @@ class UsersController < ApplicationController
     @user.username = params[:user][:username]
     @user.password = params[:user][:password]
     if @user.save
-      redirect_to '/'
+      redirect_to 'root_path'
     else
-      render :new
+      redirect_to 'users/new'
     end
   end
 
