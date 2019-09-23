@@ -1,0 +1,14 @@
+<h1>Sign Up Here:</h1>
+<%= flash.notice %>
+<%= form_for @user, url: signup_path do |f| %>
+<%= f.label "Name" %>
+<%= f.text_field :name %>
+<br><br>
+<%= f.label "Password" %>
+<%= f.password_field :password %>
+<br><br>
+<%= f.label "Confirm Password" %>
+<%= f.password_field :password_confirmation %>
+<br><br>
+<%= f.submit "Signup"%>
+<% end %>

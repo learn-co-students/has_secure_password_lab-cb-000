@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<%= flash.notice %>
+<br>
+<%= form_tag({controller: "sessions", action: "create", method: "post"}) do %>
+  <label>Name: </label>
+  <input type="text" name="user[name]">
+  <br><br>
+  <label>Password: </label>
+  <input type="password" name="user[password]">
+  <br><br>
+  <input type="submit" name="Log in">
+<% end %>
